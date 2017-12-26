@@ -8,7 +8,9 @@ import { UserComponent } from './components/user/user.component';
 
 import {routes} from './app.router';
 
-import { DataService} from './services/data.service';
+import { DataService } from './services/data.service';
+import { ErrorService } from './services/error.service';
+
 import { AboutComponent } from './components/about/about.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EmployeeComponent } from './components/employee/employee.component';
@@ -54,7 +56,8 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
     
   ],
   providers: [
-    DataService
+    DataService,
+    ErrorService
   
   ],
   bootstrap: [AppComponent]

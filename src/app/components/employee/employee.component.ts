@@ -13,13 +13,18 @@ export class EmployeeComponent implements OnInit {
   employees:Employee[];
   order: string = 'name';
   reverse: boolean = false;
+  errorMsg : string;
 
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
-    this.dataService.getUsers().subscribe((employess) =>{
-      this.employees = employess;
-    });
+    this.dataService.getUsers().
+      subscribe(employess => {this.employees = employess},
+                ResError => {
+                  this.errorMsg = ResError
+                }
+      
+    );
   }
 
   setOrder(value: string) {

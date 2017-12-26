@@ -2,6 +2,7 @@
   <br>
   <h3>Employee List</h3>
   <div>
+      <h1>{{errorMsg}}</h1>
       <form>
           <div class="input-group">
             <input #search  (keyup)="0" class="form-control" placeholder="Search">
@@ -23,9 +24,9 @@
           <th> Email</th>
       </tr>
       <tr  *ngFor="let employee of employees|  orderBy: order:reverse:'case-insensitive' | paginate: {itemsPerPage:5, currentPage:p} | FilterEmployee:search.value ">
-         <td>{{employee.id}}</td>
-         <td>{{employee.name}}</td>
-         <td>{{employee.email}}</td>
+         <td>{{employee?.id}}</td>
+         <td>{{employee?.name}}</td>
+         <td>{{employee?.email}}</td>
          <td><button class="btn btn-info" [routerLink]="['/employeedetails', employee.id]">View</button> </td>
       </tr>
     </table>
