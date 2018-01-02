@@ -12,10 +12,17 @@ export class Jquery2Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $('button').click(function(){
-      alert('tae');
-    });
+    // $('button').click(function(){
+    //   alert('tae');
+    // });
 
+  }
+  showModal(){
+    $('#exampleModal').modal('show');
+  }
+
+  hideModal(){
+    $('#exampleModal').modal('hide');
   }
 
 }
