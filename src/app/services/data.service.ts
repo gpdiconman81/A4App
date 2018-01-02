@@ -24,7 +24,7 @@ export class DataService {
 
   getUsers()
   {
-    return this.http.get('https://jsonplaceholder.typicode.com/users45')
+    return this.http.get('https://jsonplaceholder.typicode.com/users')
             .map(res=> res.json())
             .catch(this.errorService.errorHanler);
   }

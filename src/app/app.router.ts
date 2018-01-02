@@ -6,6 +6,9 @@ import {UserComponent} from '../app/components/user/user.component';
 import {AboutComponent} from '../app/components/about/about.component';
 import {EmployeeComponent} from '../app/components/employee/employee.component'; 
 import {EmployeeDetailsComponent} from '../app/components/employee-details/employee-details.component'; 
+import {MaterialComponent} from '../app/components/material/material.component';
+// import { JqueryComponent } from '../app/components/jquery/jquery.component';
+import { Jquery2Component } from '../app/components/jquery2/jquery2.component';
 
 export const router:Routes = [
      
@@ -13,6 +16,8 @@ export const router:Routes = [
   { path:'home',component:UserComponent},
   { path:'about',component:AboutComponent},
   { path:'employees',component:EmployeeComponent},
+  { path:'material',component:MaterialComponent},
+  { path:'jquery',component:Jquery2Component},
   { path:'employeedetails/:id',component:EmployeeDetailsComponent}
 ];
 

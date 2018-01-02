@@ -3,16 +3,15 @@ import { Component, OnInit } from '@angular/core';
 declare var $:any;
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-jquery2',
+  templateUrl: './jquery2.component.html',
+  styleUrls: ['./jquery2.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class Jquery2Component implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
-
     $('button').click(function(){
       alert('tae');
     });

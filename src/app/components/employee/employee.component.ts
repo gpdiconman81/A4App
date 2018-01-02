@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import {Employee} from '../../models/employee';
 import {DataService} from '../../services/data.service';
-//import {EmployeePipe} from '';
+//import { Router } from '@angular/router/src/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee',
@@ -15,16 +16,19 @@ export class EmployeeComponent implements OnInit {
   reverse: boolean = false;
   errorMsg : string;
 
-  constructor(private dataService:DataService) { }
+  constructor(private dataService:DataService,private router:Router) { }
 
   ngOnInit() {
+    
     this.dataService.getUsers().
       subscribe(employess => {this.employees = employess},
                 ResError => {
                   this.errorMsg = ResError
+                  this.router.navigate(['/about']);
                 }
-      
     );
+
+   
   }
 
   setOrder(value: string) {
