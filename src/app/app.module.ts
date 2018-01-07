@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule,Routes } from '@angular/router';
 import { Router } from '@angular/router/src/router';
+import { FormsModule }    from '@angular/forms';
 
 import {routes} from './app.router';
 
@@ -26,6 +27,9 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
 
+import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+
 
 
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
@@ -33,21 +37,12 @@ import { EmployeePipe } from './pipes/employee.pipe';
 //import { LoadingModule,ANIMATION_TYPES } from 'ngx-loading';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { MaterialComponent } from './components/material/material.component';
-import { JqueryComponent } from './components/jquery/jquery.component';
 import { Jquery2Component } from './components/jquery2/jquery2.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
-//import { Ng2SearchPipeModule } from 'ng2-search-filter'; 
 
-
-// const appRoutes : Routes =[
-  
-//   { path:'',redirectTo:'/home', pathMatch:'full'},
-//   { path:'home',component:UserComponent},
-//   { path:'about',component:AboutComponent}
-//   //{ path:'tae',component:UserComponent}
-// ];
 
 @NgModule({
   declarations: [
@@ -59,25 +54,25 @@ import { Jquery2Component } from './components/jquery2/jquery2.component';
     EmployeeDetailsComponent,
     EmployeePipe,
     MaterialComponent,
-    JqueryComponent,
-    Jquery2Component
+    Jquery2Component,
+    RegisterComponent
     
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    //  BrowserAnimationsModule,
-    //NoopAnimationsModule,
     MatCheckboxModule,
     MatDatepickerModule,
     MatFormFieldModule,
     routes,
     NgxPaginationModule,
     OrderModule,
+    FormsModule,
     Ng4LoadingSpinnerModule.forRoot(),
+    RecaptchaModule.forRoot(),
+    RecaptchaFormsModule
 
    
-    //RouterModule.forRoot(appRoutes)
     
   ],
   providers: [

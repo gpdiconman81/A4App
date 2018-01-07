@@ -25,4 +25,12 @@ export class Jquery2Component implements OnInit {
     $('#exampleModal').modal('hide');
   }
 
+  Tae(){
+    console.log('Push');
+  }
+
+  setVerified(data){
+    console.log(data);
+  }
+
 }
